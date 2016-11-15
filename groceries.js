@@ -31,7 +31,7 @@ function addItem(){
   btnClose.classList.add("btn");
   btnClose.classList.add("btn-danger");
   btnClose.classList.add("btn-xs");
-  btnClose.addEventlistener("click", removeParentlistItem);
+  btnClose.addEventListener("click", removeParentlistItem);
   var itemName = document.createTextNode(input);
   item.appendChild(itemName);
   list.appendChild(item);
@@ -46,6 +46,6 @@ function addItem(){
 
 function removeParentlistItem(){
   var mom = this.parentNode;
-  var grandma = mom.parent.Node;
+  var grandma = mom.parentNode;
   grandma.removeChild(mom);
 }
