@@ -1,4 +1,4 @@
-
+var myList = [];
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -25,22 +25,26 @@ function getCookie(cname) {
 function addItem(){
 
   var input = document.getElementById("newItem").value;
-  var list = document.getElementById("listDisplay");
-  var item = document.createElement("li");
-  var btnClose = document.createElement("button");
-  btnClose.classList.add("btn");
-  btnClose.classList.add("btn-danger");
-  btnClose.classList.add("btn-xs");
-  btnClose.addEventListener("click", removeParentlistItem);
-  var itemName = document.createTextNode(input);
-  item.appendChild(itemName);
-  list.appendChild(item);
-  document.getElementById("newItem").value = "";
-  var iconClose = document.createElement("span");
-  iconClose.classList.add("glyphicon");
-  iconClose.classList.add("glyphicon-remove");
-  btnClose.appendChild(iconClose);
-  item.appendChild(btnClose);
+  if (myList.indexOf(input) == -1){
+    myList.push(input);
+    console.log(myList);
+    var list = document.getElementById("listDisplay");
+    var item = document.createElement("li");
+    var btnClose = document.createElement("button");
+    btnClose.classList.add("btn");
+    btnClose.classList.add("btn-danger");
+    btnClose.classList.add("btn-xs");
+    btnClose.addEventListener("click", removeParentlistItem);
+    var itemName = document.createTextNode(input);
+    item.appendChild(itemName);
+    list.appendChild(item);
+    document.getElementById("newItem").value = "";
+    var iconClose = document.createElement("span");
+    iconClose.classList.add("glyphicon");
+    iconClose.classList.add("glyphicon-remove");
+    btnClose.appendChild(iconClose);
+    item.appendChild(btnClose);
+  }
 
 }
 
