@@ -49,7 +49,14 @@ function addItem(){
 }
 
 function removeParentlistItem(){
+
+
   var mom = this.parentNode;
+  var itemRemove = mom.firstChild.textContent;
+  var itemIndex = myList.indexOf(itemRemove);
+  myList.splice(itemIndex,1);
+  console.log(myList);
   var grandma = mom.parentNode;
   grandma.removeChild(mom);
+
 }
