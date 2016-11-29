@@ -60,3 +60,18 @@ function removeParentlistItem(){
   grandma.removeChild(mom);
 
 }
+
+function saveList() {
+  var list = myList.toString();
+  setCookie("groceryList",list,1);
+}
+
+function clearList() {
+  var display = document.getElementById("listDisplay");
+
+  while (display.firstChild) {
+    display.removeChild(display.firstChild);
+}
+myList = [];
+
+}
