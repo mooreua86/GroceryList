@@ -59,7 +59,7 @@ function clearList() {
 }
 
 function displayItem(input) {
-  if (myList.indexOf(input) == -1){
+  if (myList.indexOf(input) == -1 && input != ""){
     myList.push(input);
     console.log(myList);
     var list = document.getElementById("listDisplay");
