@@ -82,7 +82,7 @@ function displayItem(input) {
 }
 
 function loadCookieList(){
-  var groceryListCookie = getCookie(groceryList);
+  var groceryListCookie = getCookie("groceryList");
   var arrayCookie = groceryListCookie.split(",");
 
   for(var i = 0; i < arrayCookie.length; i++){
